@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dc">
+    {% for request, project_management in zipped_data %}
+        <div class="cards">
+            <h5 class="card-title mb-4">Service Request ID: {{ request.id }}</h5>
+            <p class="card-text"><strong>Architect:</strong> {{ request.architech.name }}</p>
+            <p class="card-text"><strong>Contractor:</strong> {{ request.contractor.name }}</p>
+            <p class="card-text"><strong>Supplier:</strong> {{ request.supplier.name }}</p>
+            <p class="card-text"><strong>Service Type:</strong> {{ request.service_type }}</p>
+            <p class="card-text"><strong>Request Date:</strong> {{ request.request_date }}</p>
+            <p class="card-text"><strong>Status:</strong> {{ request.status }}</p>
+            {%if project_management%}
+            <p class="card-text"><strong>Timeline:</strong> {{ project_management.timeline }}</p>
+            <p class="card-text"><strong>Budget:</strong> {{ project_management.budget }}</p>
+            <p class="card-text"><strong>Progress:</strong> {{ project_management.progress }}%</p>
+            {%endif%}
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

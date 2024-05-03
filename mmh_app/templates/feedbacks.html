@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<h1 class="text-center mt-5">Feedbacks</h1>
+<div class="dc">
+    {% for x in f %}
+        <div class="cards">
+            <div class="imdiv" style="height: 250px;">
+                <img src="{%static 'f.avif'%}" alt="">
+            </div>
+            <h3 class="card-title mb-4 text-center">{{ x.name }}</h3>
+            <p class="card-text text-start"><strong>Phone:</strong> {{ x.email }}</p>
+            <p class="card-text text-start"><strong>Remark:</strong> {{ x.remark}}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<h1 class="text-center mt-5">Contractors</h1>
+<div class="dc">
+    {% for x in c %}
+        <div class="cards">
+            <div class="imdiv">
+                <img src="{%static 'c.jpg'%}" alt="">
+            </div>
+            <h3 class="card-title mb-4 text-center"><strong>Name:</strong> {{ x.name }}</h3>
+            <p class="card-text"><strong>Phone:</strong> {{ x.phone }}</p>
+            <p class="card-text"><strong>Expertise:</strong> {{ x.expertise}}</p>
+            <button class="btna d-block mx-auto" onclick="window.location.href='{%url 'projects' x.phone%}';">Show Projects</button>
+        </div>
+    {% endfor %}
+</div>
+
+
+<h1 class="text-center mt-5">Architects</h1>
+<div class="dc">
+    {% for x in a %}
+        <div class="cards">
+            <div class="imdiv">
+                <img src="{%static 'a.jpg'%}" alt="">
+            </div>
+            <h3 class="card-title mb-4 text-center"><strong>Name:</strong> {{ x.name }}</h3>
+            <p class="card-text"><strong>Phone:</strong> {{ x.phone }}</p>
+            <p class="card-text"> {{ x.specilization}}</p>
+            <button class="btna d-block mx-auto" onclick="window.location.href='{%url 'designs' x.phone%}';">Show Designs</button>
+        </div>
+    {% endfor %}
+</div>
+
+<h1 class="text-center mt-5">Suppliers</h1>
+<div class="dc">
+    {% for x in s %}
+        <div class="cards">
+            <div class="imdiv">
+                <img src="{%static 's.jpeg'%}" alt="">
+            </div>
+            <h3 class="card-title mb-4 text-center"><strong>Name:</strong> {{ x.name }}</h3>
+            <p class="card-text"><strong>Phone:</strong> {{ x.phone }}</p>
+            <p class="card-text"><strong>Categlogue:</strong> {{ x.categloge}}</p>
+            <button class="btna d-block mx-auto" onclick="window.location.href='{%url 'catalogue' x.phone%}';">Show Catalogue</button>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

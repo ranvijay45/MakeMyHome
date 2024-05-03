@@ -1,0 +1,148 @@
+{%extends 'base.html'%}
+
+{%load static%}
+{%block content%}
+
+
+
+
+
+
+
+
+
+
+<section id="hero">
+    <div
+        style="height: 50rem;  background-image: url(../static/h.jpg); background-position: center; background-size: cover;">
+    </div>
+    <div class="dc mb-5 p-5">
+        <div style="width: 50rem;">
+            <h1 style="font-size: 4rem; font-weight: 900;">Building Dreams, One Home at a Time</h1>
+        </div>
+        <div style="width: 60rem; padding: 1vw 5vw;">
+            <h3>Experience the joy of a beautifully constructed home. Find architects, contractors, and suppliers for
+                your dream project.</h3>
+            <button class="btna mt-3 mx-2" onclick="window.location.href='/owner_login/';">Login</button>
+            <button class="btnb mt-3 mx-2" onclick="window.location.href='#about';">Know More</button>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section id="feature">
+    <div class="cc" style="gap: 10vw; flex-wrap: wrap-reverse !important;">
+        <div style="max-width: 700px;">
+
+            <h1 style="font-size: 4rem; font-weight: 900;">Streamlined process for hassle-free house construction</h1>
+            <p class="mt-3" style="font-size: larger;">At Makemyhome, we make requesting house construction or
+                renovation services easy and convenient. Our streamlined process ensures a hassle-free experience from
+                start to finish.</p>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="max-width: 300px">
+                    <h4>Request</h4>
+                    <p>Submit your project details and requirements to get started.</p>
+                </div>
+                <div style="max-width: 300px;">
+                    <h4>Connect</h4>
+                    <p>We connect you with experienced architects, contractors, and suppliers.</p>
+                </div>
+            </div>
+
+            <button class="btnb" onclick="window.location.href='#about';">Learn More</button>
+            <button class="btnb" style="border: none !important;"
+                onclick="window.location.href='/owner_register/';">Sign Up ></button>
+
+
+
+        </div>
+        <div id="featureimg"></div>
+    </div>
+
+</section>
+
+
+
+<section id="extras">
+    <div class="cc" style="gap: 8vw;">
+        <div id="extrasimg"></div>
+        <div style="margin-top: 2vw; width: 700px;">
+            <h1 style="font-size: 3rem; font-weight: 700;">About US</h1>
+            <p>Welcome to MakeMyHome - Your Dream Home Awaits!
+
+                At MakeMyHome, we believe that every homeowner deserves to live in their dream house. Our platform
+                empowers users to bring their vision to life by creating custom homes tailored to their unique
+                preferences and requirements.</p>
+
+                <p> Endless Possibilities:
+
+                Personalized Design: Begin your journey by expressing your style and preferences. Whether you prefer
+                modern minimalism, classic elegance, or something entirely unique, our platform offers a wide range of
+                design options to suit your taste.
+                Interactive Planning: Visualize your dream home with our intuitive 3D modeling and visualization tools.
+                Experiment with different layouts, materials, and finishes to create the perfect space for you and your
+                family.
+                Expert Collaboration: Collaborate with a network of skilled architects, designers, contractors, and
+                suppliers to bring your vision to life. Our platform connects you with professionals who understand your
+                needs and are dedicated to delivering exceptional results.
+                Effortless Project Management: Leave the logistics to us. Our project management tools streamline the
+                construction process, ensuring that your project stays on track, on time, and within budget. Track
+                progress, manage tasks, and stay informed every step of the way.
+                </p>
+                <p>Your Dream Home, Your Way:
+
+                Seamless User Experience: Our user-friendly interface makes it easy to navigate and explore all the
+                features of our platform. Whether you're a first-time homeowner or a seasoned design enthusiast, our
+                platform caters to users of all skill levels.
+                Responsive Support: Have questions or need assistance? Our dedicated support team is here to help. From
+                design consultations to technical support, we're committed to providing personalized assistance whenever
+                you need it.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section id="contact">
+    <div class="dc" style="width: 100%; gap:10vw;">
+        <div>
+            <h1 class="mb-4">Feedback</h1>
+            <p>Write Your Feedback here</p>
+            <div style="border: 1px dotted rgb(176, 176, 176); padding: 2vw; margin-bottom: 6vw; background-color: white;">
+                <form method="post" action="{{'/feedback/'}}">
+                    {% csrf_token %}
+                    <div class="mb-2">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
+                            required>
+                    </div>
+                    <div class="mb-2">
+                        <textarea style="height: 100px;" class="form-control" id="remark" placeholder="Remark"
+                            name="remark" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" \ class="btna w-50 p-2 d-block mx-auto mt-3">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div id="contactimg">
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+{%endblock content%}

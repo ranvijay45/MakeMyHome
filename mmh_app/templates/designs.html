@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<h1 class="text-center mt-5">Designs</h1>
+<div class="dc">
+    {% for x in obj %}
+        <div class="cards">
+            <div class="imdiv" style="height: 250px;">
+                <img src="{{x.pic.url}}" alt="">
+            </div>
+            <h3 class="card-title mb-4 text-center">{{ x.architect.name }}</h3>
+            <p class="card-text text-start"><strong>Design:</strong> {{ x.name }}</p>
+            <p class="card-text text-start"><strong>Category:</strong> {{ x.category }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

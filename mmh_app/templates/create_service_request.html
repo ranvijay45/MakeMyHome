@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dc">
+    <div class="frm">
+        <h2>Create Service Request</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+                <select class="form-select" name="architech" id="architech">
+                    {% for architect in architects %}
+                        <option value="{{ architect.phone }}">{{ architect.name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="architech">Select Architect:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" name="contractor" id="contractor">
+                    {% for contractor in contractors %}
+                        <option value="{{ contractor.phone}}">{{ contractor.name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="contractor">Select Contractor:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" name="supplier" id="supplier">
+                    {% for supplier in suppliers %}
+                        <option value="{{ supplier.phone }}">{{ supplier.name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="supplier">Select Supplier:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" name="service_type" id="service_type">
+                    <option value="Design Consultation">Design Consultation</option>
+                    <option value="Construction Planning">Construction Planning</option>
+                    <option value="Material Procurement">Material Procurement</option>
+                    <option value="Structural Engineering">Structural Engineering</option>
+                    <option value="Interior Design">Interior Design</option>
+                    <option value="Landscaping">Landscaping</option>
+                    <option value="Home Renovation">Home Renovation</option>
+                    <option value="Electrical Installation">Electrical Installation</option>
+                </select>
+                <label for="service_type">Select Service Type:</label>
+            </div>
+            <button class="btna d-block mx-auto" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
